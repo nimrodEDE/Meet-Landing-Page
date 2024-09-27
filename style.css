@@ -1,0 +1,289 @@
+:root {
+  --cyan-600: #4d96a9;
+  --cyan-300: #9fe3f9;
+  --purple-600: #855fb1;
+  --purple-300: #d9b8ff;
+  --slate-900: #28283d;
+  --slate-600: #87879d;
+  --slate-300: #d1d1df;
+  --white: #fafafa;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  background-color: var(--white);
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 10rem;
+}
+
+.hero {
+  display: grid;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.hero-left,
+.hero-right {
+  display: none;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text > * {
+  margin: 1rem;
+}
+
+.logo {
+  width: 30%;
+  margin: 3rem auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 1000;
+  line-height: 110%;
+  padding: 0 4rem;
+  color: var(--slate-900);
+  letter-spacing: 0px;
+}
+
+p {
+  color: var(--slate-600);
+  font-weight: 500;
+  padding: 0 2.5rem;
+  line-height: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+button {
+  display: block;
+  margin-inline: auto;
+  height: 3.5rem;
+  border-radius: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--white);
+  border: none;
+}
+
+.download {
+  width: 12rem;
+  background-color: var(--cyan-600);
+}
+
+.download span {
+  color: var(--cyan-300);
+}
+
+.what {
+  width: 10rem;
+  background-color: var(--purple-600);
+}
+
+/* divider */
+
+.divider,
+.divider-two {
+  height: 7rem;
+  margin: 3rem 0;
+}
+
+.line {
+  margin-inline: auto;
+  width: 1px;
+  height: 70%;
+  background-color: var(--slate-300);
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-inline: auto;
+  border: var(--slate-300) 1px solid;
+  border-radius: 50%;
+  font-weight: bold;
+  color: var(--slate-600);
+}
+
+/* grid-container */
+.images-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 1rem;
+  margin: 2rem;
+  margin-bottom: 3rem;
+}
+
+.img-container img {
+  border-radius: 1rem;
+}
+
+h3 {
+  color: var(--cyan-600);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: 0px;
+  font-weight: 1000;
+  line-height: 2rem;
+  margin: 0 2rem 2rem;
+  padding: 0 1rem;
+  color: var(--slate-900);
+}
+
+footer {
+  background-size: cover;
+  background-image: url(./assets/mobile/image-footer.jpg);
+}
+
+.divider-two {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: -42%;
+  /* background-color: #28283d; */
+}
+
+.divider-two .circle {
+  background-color: var(--white);
+}
+
+.img-overlay {
+  background-color: rgba(77, 150, 168, 0.873);
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.img-overlay > .footer-text > * {
+  color: var(--white);
+}
+
+.img-overlay h2 {
+  margin: 3rem 0 1rem;
+}
+
+.img-overlay button {
+  background-color: var(--purple-600);
+  margin: 2rem auto;
+}
+
+.img-overlay button span {
+  color: var(--purple-300);
+}
+
+@media (min-width: 35rem) {
+  .buttons {
+    flex-direction: row;
+    width: 50%;
+    margin-inline: auto;
+  }
+
+  .images-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  p,
+  h2,
+  h3,
+  h1 {
+    padding: 0 12rem;
+  }
+
+  .divider-two {
+    top: -45%;
+  }
+}
+
+@media (min-width: 65rem) {
+  .hero {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: c;
+    width: 80%;
+    margin-inline: auto;
+  }
+  .mobile-tablet-photo {
+    display: none;
+  }
+
+  .hero-left,
+  .hero-right {
+    display: inline;
+  }
+
+  p,
+  h2,
+  h3,
+  h1 {
+    padding: 0 2rem;
+  }
+
+  .buttons {
+    flex-direction: row;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .divider-two {
+    top: -48%;
+  }
+
+  .one p {
+    padding: 0 15rem;
+  }
+
+  .footer-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-text > *:not(.download) {
+    width: min(45ch, 35%);
+    padding: 5rem;
+  }
+}
